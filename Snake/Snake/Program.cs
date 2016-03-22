@@ -10,16 +10,20 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(1, 3, '+');
-            p1.Draw();
+            Console.SetBufferSize(80, 25);
 
-            Point p2 = new Point(4, 5, '-');
-            p2.Draw();
+            HorizontalLine lineUp = new HorizontalLine(0, 78, 0, '=');
+            HorizontalLine lineDown = new HorizontalLine(0, 78, 24, '=');
+            VerticalLine lineLeft = new VerticalLine(0, 24, 0, '|');
+            VerticalLine lineRight = new VerticalLine(0, 24, 78, '|');
+            lineUp.Drow();
+            lineDown.Drow();
+            lineLeft.Drow();
+            lineRight.Drow();
 
-            HorizontalLine LineH = new HorizontalLine(0, 20, 15, '=');
-            LineH.Drow();
-            VerticalLine LineV = new VerticalLine(0, 15, 20, '|');
-            LineV.Drow();
+
+            Point p = new Point(4, 4, '*');
+            p.Draw();
 
             Console.ReadLine();
         }
